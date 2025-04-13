@@ -52,7 +52,7 @@ function search() {
         const resultsDiv = document.getElementById("results");
         resultsDiv.innerHTML = "";
         if (data.length === 0) {
-            resultsDiv.innerHTML = "<p>No results found.</p>";
+            resultsDiv.innerHTML = "<p class='text-design'>No results found.</p>";
             return;
         }
         data.forEach(item => {

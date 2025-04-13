@@ -179,14 +179,12 @@
 /* Display all resoults */
 #results {
     height: fit-content;
-    max-height: 800px;
+    max-height: 580px;
     width: 100%;
 
     scrollbar-width: none;
     -ms-overflow-style: none;
     overflow-y: scroll;
-
-    margin-bottom: 50px;
 }
 #results .result-block {
     width: calc(100% - 20px);
@@ -224,3 +222,32 @@
     font-family: var(--text-font);
     padding-left: 33px;
 }
+
+/* =============================================================================== */
+/* Other */
+.reload-button {
+    background: url("../image/icon/rotate-right.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+
+    height: 40px;
+    width: fit-content;
+
+    padding: 10px;
+    padding-left: 40px;
+
+    border: 1px solid var(--dark-white);
+    border-radius: 100px;
+    margin-left: auto;
+
+    position: absolute;
+    top: 15px;
+    right: 0;
+    
+    cursor: pointer;
+    z-index: 10000000;
+
+    transition: all .3s;
+}
+.reload-button:active {transform: scale(.9);}

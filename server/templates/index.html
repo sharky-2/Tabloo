@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/root.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/design.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet" href="../static/css/design.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/root.css">
 </head>
 <body>
 
@@ -16,12 +20,13 @@
 
         <!-- Upload/Drop files -->
         <div class="drop-file-frame" style="display: none;">
-            <img src="../static/image/icon/upload.png" uploadFiles()> 
+            <img src="../static/image/icon/upload.png" onclick="uploadFiles()"> 
             <div class="drop-zone" id="dropZone">
                 <p class="text-design">Drop file here</p>
                 <p class="text-design">Drop only exel files here to add them into search data</p>
                 <label id="fileName">Nobena datoteka ni izbrana</label>
-                <input type="file" id="excelFiles" name="files" accept=".xlsx" multiple />
+                <!--  accept=".xlsx" -->
+                <input type="file" id="excelFiles" name="files" multiple />
             </div>
         </div>
 
@@ -44,22 +49,9 @@
             </div>
         </div>
 
+        <button onclick="window.location.reload()" class="reload-button">Reload Page</button>
     </section>
 
-    <script src="../static/script/script.js"></script>
-    <script>
-        const input = document.getElementById("excelFiles");
-        const label = document.getElementById("fileName");
-
-        input.addEventListener('change', () => {
-            const fileCount = input.files.length;
-            if (fileCount === 0) {
-            label.textContent = 'Upload Excel Files';
-            } else {
-            label.textContent = `${fileCount} file${fileCount > 1 ? 's' : ''} selected`;
-            }
-        });
-
-    </script>
+    <script src="{{ url_for('static', filename='script/script.js') }}"></script>
 </body>
 </html>

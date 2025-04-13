@@ -1,19 +1,26 @@
 body {
-    padding: 0;
+    padding: 10px;
     margin: 0 auto;
 
-    width: 900px;
-    height: 100vh;
+    width: calc(600px - 20px);
+    height: calc(800px - 20px);
 
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     
+    position: relative;
 }
 
 section {
     width: 100%;
     height: fit-content;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
 }
 
 .title-design {font-family: var(--title-font); margin: 0; font-size: 25px;}
