@@ -36,6 +36,24 @@ pip install flask pandas openpyxl python-docx PyMuPDF
 
 <details open> 
 <summary> 
+📄 Set up your files position
+  
+> How to set up file path propertly
+</summary>
+
+- **1. Open file explorer**
+   - Go to the folder where your documents are
+   - Click the top bar and copy the folder path
+
+- **2. Change file path**
+   - Open app.py
+   - Find the line with "UPLOAD_FOLDER"
+   - Replace the existing path with the one you copied
+
+</details>
+
+<details open> 
+<summary> 
 ▶️ Running the Project
   
 > How to run the project propertly
