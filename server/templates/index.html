@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabloo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/root.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/design.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <section>
+
+        <!-- Display all resoults -->
+        <div id="results" class="result"></div>
+
+        <!-- Upload/Drop files -->
+        <div class="drop-file-frame" style="display: none;">
+            <img src="../static/image/icon/upload.png" uploadFiles()> 
+            <div class="drop-zone" id="dropZone">
+                <p class="text-design">Drop file here</p>
+                <p class="text-design">Drop only exel files here to add them into search data</p>
+                <label id="fileName">Nobena datoteka ni izbrana</label>
+                <input type="file" id="excelFiles" name="files" accept=".xlsx" multiple />
+            </div>
+        </div>
+
+        <!-- Search -->
+        <div class="search-frame">
+            <h1 class="title-design">What do you want to find?</h1>
+            <textarea id="query" class="text-design" oninput="autoResize()" placeholder="Search..." rows="1"></textarea>
+
+            <div class="other-buttons">
+                <button class="upload-file-button button"></button>
+                <button class="display-all-files button"></button>
+
+                <button onclick="search(), resetHeight()" class="button send-button"></button>
+            </div>
+
+            <div class="rank" style="display: none;">
+                <label class="text-design">Find</label>
+                <label class="text-design">Import</label>
+                <label class="text-design">Explore</label>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="../static/script/script.js"></script>
+    <script>
+        const input = document.getElementById("excelFiles");
+        const label = document.getElementById("fileName");
+
+        input.addEventListener('change', () => {
+            const fileCount = input.files.length;
+            if (fileCount === 0) {
+            label.textContent = 'Upload Excel Files';
+            } else {
+            label.textContent = `${fileCount} file${fileCount > 1 ? 's' : ''} selected`;
+            }
+        });
+
+    </script>
+</body>
+</html>
