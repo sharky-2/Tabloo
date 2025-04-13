@@ -17,10 +17,9 @@ section {
     height: fit-content;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    gap: 50px;
 }
 
 .title-design {font-family: var(--title-font); margin: 0; font-size: 25px;}
